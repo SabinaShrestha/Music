@@ -1,6 +1,5 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:edit, :update, :show, :destroy]
-  before
   
   def index
     @boards = Board.all
@@ -20,7 +19,7 @@ class BoardsController < ApplicationController
 
   def update
     if @board.update(board_params)
-      redirect_to root_path
+      redirect_to boards_path
     else
       render :edit
     end
@@ -29,7 +28,7 @@ class BoardsController < ApplicationController
   def create 
     @board = Board.new(board_params)
     if @board.save
-      redirect_to root_path
+      redirect_to boards_path
     else
       render :new
     end
@@ -37,7 +36,7 @@ class BoardsController < ApplicationController
 
   def destroy
     @board.destroy
-    redirect_to root_path
+    redirect_to boards_path
   end
 
 
