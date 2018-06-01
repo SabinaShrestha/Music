@@ -19,5 +19,6 @@
         title: Faker::Music.album,
         rating: Faker::Number.between(1, 5)
       )
+    end
   end
 end
