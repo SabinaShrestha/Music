@@ -1,2 +1,10 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+<h1><%= @artist.name %></h1>
+<ul>
+  <% @songs.each do |s| %>
+    <li>
+      <%= s.title %>
+      <%= s.rating %>
+      <%= link_to, 'Edit song' edit_artist_song_path[@artist, s] %>
+    </li>
+  <% end %>
+</ul>
