@@ -1,0 +1,9 @@
+<h1><%= @board.id ? 'Edit Board' : 'Create Board' %></h1>
+
+<%= form_for @board do |f| %>
+  <%= f.label :genre%>
+  <%= f.text_field :genre %>
+
+
+  <%= f.submit %>
+<% end %>

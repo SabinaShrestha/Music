@@ -35,6 +35,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+    # binding.pry
     @board.destroy
     redirect_to boards_path
   end

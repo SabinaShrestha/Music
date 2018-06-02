@@ -1,9 +1,10 @@
 <h1><%= @board.genre %></h1>
 <ul>
-  <% @artists.each do |a| %>
+  <% @board.artists.each do |a| %>
     <li>
       <%= a.name %>
       <%= link_to 'View Songs', artist_songs_path(a) %>
+      <%= link_to 'Edit Artist', edit_board_artist_path(@board, a) %>
     </li>
   <% end %>
 </ul>

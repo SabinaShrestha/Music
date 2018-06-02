@@ -29,6 +29,7 @@ class SongsController < ApplicationController
       redirect_to [@artist, @song]
     else
       render :form
+    end
   end
 
   def destroy
@@ -43,11 +44,10 @@ class SongsController < ApplicationController
   end
 
   def set_artist
-    @artist = Artists.find(params[:artist_id])
+    @artist = Artist.find(params[:artist_id])
   end
 
   def set_song
     @song = Songs.find(params[:id])
   end
-
 end

@@ -24,11 +24,12 @@ class ArtistsController < ApplicationController
       redirect_to board_path(@board)
     else
       render :new 
+    end
   end
 
   def update
     if @artist.update(artist_params)
-      redirect_to [@board, @artist]
+      redirect_to @board
     else
       render :edit
     end
@@ -50,6 +51,6 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:aritst).permit(:name)
+    params.require(:artist).permit(:name)
   end
 end
